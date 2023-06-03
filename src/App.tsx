@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {INGREDIENTS} from "./data";
+import MenuList from "./components/MenuList/MenuList";
 
 
 const App = () => {
@@ -15,19 +15,7 @@ const App = () => {
                 </div>
             </div>
             <div className="menu-block">
-                <ul className="menu">
-                    {INGREDIENTS.map((ing, index) => (
-                        <li className="menu-item" key={index}>
-                            <div className="menu-item--img">
-                                <img src={ing.imgSrc} alt="Burger"/>
-                            </div>
-                            <div>
-                                <div>{ing.name}</div>
-                                <div>{ing.price} KGS</div>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
+                <MenuList />
             </div>
         </div>
     );

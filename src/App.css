@@ -3,17 +3,26 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    padding: 2%;
+    box-sizing: border-box;
+
 }
 
 .order-block,
 .menu-block {
     flex: 1;
     height: 100%;
+    padding: 1%;
+    margin: 0 1%;
+    border: 1px solid #000;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .menu {
     display: flex;
     flex-wrap: wrap;
+
 }
 
 .menu-item {
