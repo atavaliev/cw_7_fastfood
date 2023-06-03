@@ -9,14 +9,14 @@ import Logo from './assets/logo.png';
 const App = () => {
 
     const [orderList, setOrderList] = useState<IOrderList[]>([
-        {name: 'Hamburger', price: 80, count: 0},
-        {name: 'Corndog', price: 90, count: 0},
-        {name: 'Hotdog', price: 90, count: 0},
-        {name: 'Cheeseburger', price: 90, count: 0},
-        {name: 'Fries', price: 45, count: 0},
-        {name: 'Coffee', price: 70, count: 0},
-        {name: 'Tea', price: 50, count: 0},
-        {name: 'Cola', price: 40, count: 0},
+        {name: 'Hamburger', price: 150, count: 0},
+        {name: 'Cola', price: 50, count: 0},
+        {name: 'Corndog', price: 45, count: 0},
+        {name: 'Water', price: 35, count: 0},
+        {name: 'Hotdog', price: 100, count: 0},
+        {name: 'Tea', price: 45, count: 0},
+        {name: 'Fries', price: 100, count: 0},
+        {name: 'Coffee', price: 120, count: 0},
         {name: 'Kebab', price: 150, count: 0},
         {name: 'Bubble tea', price: 140, count: 0}
     ])
@@ -50,7 +50,6 @@ const App = () => {
         orderListCopy[i].count = 0;
         setOrderList(orderListCopy);
     };
-
 
     return (
         <div className="wrapper">

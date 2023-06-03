@@ -2,7 +2,6 @@ import React from 'react';
 import {INGREDIENTS} from "../../data";
 import MenuListItem from "../MenuListItem/MenuListItem";
 
-
 interface IProps {
     addOrder: (index: number) => void;
 }

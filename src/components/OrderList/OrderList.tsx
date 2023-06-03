@@ -15,7 +15,7 @@ const OrderList: React.FC<IProps> = ({orderList,totalItemsCount, removeOrder}) =
                ? orderList.map((order, index) => {
                     return order.count !== 0
                         ? <OrderListItem key={index} order={order} removeOrder={() => removeOrder(index)}/>
-                        : null
+                        : null;
                 })
                 : <div>
                     <p><strong>Order is Empty!</strong></p>

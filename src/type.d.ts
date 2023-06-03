@@ -8,5 +8,5 @@ export interface IIngredient {
 export interface IOrderList {
     name: string;
     price: number;
-    count: number
+    count: number;
 }

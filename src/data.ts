@@ -13,9 +13,9 @@ import {IIngredient} from "./type";
 export const INGREDIENTS:IIngredient[] = [
     {name: 'Hamburger', price: 150, count: 0, imgSrc: BurgerImg},
     {name: 'Cola', price: 50, count: 0, imgSrc: Cola},
-    {name: 'Corndog', price: 70, count: 0, imgSrc: Corndog},
+    {name: 'Corndog', price: 45, count: 0, imgSrc: Corndog},
     {name: 'Water', price: 35, count: 0, imgSrc: Water},
-    {name: 'Hotdog', price: 120, count: 0, imgSrc: Hotdog},
+    {name: 'Hotdog', price: 100, count: 0, imgSrc: Hotdog},
     {name: 'Tea', price: 45, count: 0, imgSrc: Tea},
     {name: 'Fries', price: 100, count: 0, imgSrc: FrenchFries},
     {name: 'Coffee', price: 120, count: 0, imgSrc: Coffee},
