@@ -1,30 +1,30 @@
 import React from 'react';
 import {IOrderList} from "../../type";
+import OrderListItem from "./OrderListItem/OrderListItem";
 
 interface IProps {
-    orderList:IOrderList[];
+    orderList: IOrderList[];
+    totalItemsCount: () => number;
+    removeOrder:(index:number) => void;
 }
 
-const OrderList:React.FC<IProps> = ({orderList}) => {
+const OrderList: React.FC<IProps> = ({orderList,totalItemsCount, removeOrder}) => {
     return (
         <div>
-            {
-                orderList.map((order, index) => {
-                    return <li key={index} style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'space-between',
-                            padding: '5px 10px',
-                            border: '1px solid #000',
-                            margin: '2px'
-                        }}>
-                            {order.name} {order.count} x {order.price}
-                            <span>delete</span>
-                        </li>
+            {totalItemsCount() > 0
+               ? orderList.map((order, index) => {
+                    return order.count !== 0
+                        ? <OrderListItem key={index} order={order} removeOrder={() => removeOrder(index)}/>
+                        : null
                 })
+                : <div>
+                    <p><strong>Order is Empty!</strong></p>
+                    <p><strong>Please ass some items</strong></p>
+                </div>
             }
         </div>
     );
 };
+
 
 export default OrderList;

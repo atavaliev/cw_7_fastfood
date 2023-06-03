@@ -3,6 +3,8 @@ import './App.css';
 import MenuList from "./components/MenuList/MenuList";
 import OrderList from "./components/OrderList/OrderList";
 import {IOrderList} from "./type";
+import TotalPrice from "./components/TotalPrice/TotalPrice";
+import Logo from './assets/logo.png';
 
 const App = () => {
 
@@ -15,20 +17,55 @@ const App = () => {
         {name: 'Coffee', price: 70, count: 0},
         {name: 'Tea', price: 50, count: 0},
         {name: 'Cola', price: 40, count: 0},
+        {name: 'Kebab', price: 150, count: 0},
+        {name: 'Bubble tea', price: 140, count: 0}
     ])
 
+    //Add Meal to Order List
+    const addOrder = (i: number) => {
+        const orderListCopy = [...orderList];
+        orderListCopy[i].count += 1;
+        setOrderList(orderListCopy)
+    }
+
+    //Get total price of order
+    const totalPrice = (): number => {
+        return orderList.reduce((acc, i) => {
+            acc += i.price * i.count
+            return acc;
+        }, 0)
+    }
+
+    //Get total item count to show "empty placeholder"
+    const totalItemsCount = (): number => {
+        return orderList.reduce((acc, i) => {
+            acc += i.count
+            return acc;
+        }, 0)
+    }
+
+    // Remove item from order
+    const removeOrder = (i: number) => {
+        const orderListCopy = [...orderList];
+        orderListCopy[i].count = 0;
+        setOrderList(orderListCopy);
+    };
+
+
     return (
-        <div className="main-block">
-            <div className="order-block">
-
-                <OrderList orderList={orderList}/>
-                <div>
-
-                    Total price: 0 GKS
+        <div className="wrapper">
+            <div className="main-block">
+                <div className="order-block">
+                    <OrderList
+                        orderList={orderList}
+                        totalItemsCount={totalItemsCount}
+                        removeOrder={removeOrder}
+                    />
+                    <TotalPrice totalPrice={totalPrice}/>
                 </div>
-            </div>
-            <div className="menu-block">
-                <MenuList/>
+                <div className="menu-block">
+                    <MenuList addOrder={addOrder}/>
+                </div>
             </div>
         </div>
     );
