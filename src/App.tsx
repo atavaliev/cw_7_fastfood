@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
+import {INGREDIENTS} from "./data";
 
-function App() {
+
+const App = () => {
     return (
         <div className="main-block">
             <div className="order-block">
@@ -14,15 +16,17 @@ function App() {
             </div>
             <div className="menu-block">
                 <ul className="menu">
-                    <li className="menu-item">
-                        <div className="menu-item--img">
-                            <img src="" alt=""/>
-                        </div>
-                        <div>
-                            <div>Name</div>
-                            <div>Price KGS</div>
-                        </div>
-                    </li>
+                    {INGREDIENTS.map((ing, index) => (
+                        <li className="menu-item" key={index}>
+                            <div className="menu-item--img">
+                                <img src={ing.imgSrc} alt="Burger"/>
+                            </div>
+                            <div>
+                                <div>{ing.name}</div>
+                                <div>{ing.price} KGS</div>
+                            </div>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>
