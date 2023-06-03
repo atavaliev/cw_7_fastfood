@@ -4,7 +4,6 @@ import MenuList from "./components/MenuList/MenuList";
 import OrderList from "./components/OrderList/OrderList";
 import {IOrderList} from "./type";
 import TotalPrice from "./components/TotalPrice/TotalPrice";
-import Logo from './assets/logo.png';
 
 const App = () => {
 
